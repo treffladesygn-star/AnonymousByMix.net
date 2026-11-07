@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsenal Cyber | Resurse Hacking Etic | By Mix</title>
+    <meta name="description" content="Toate resursele utile pentru hacking etic, cybersecurity și CTF adunate într-un singur loc. Design By Mix.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0c0f;
+            --bg-card: #111418;
+            --bg-hover: #161b22;
+            --border: #1e2630;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #00ff9d;
+            --accent-dim: #00cc7a;
+            --accent-glow: rgba(0, 255, 157, 0.15);
+            --red: #ff4d6a;
+            --blue: #58a6ff;
+            --purple: #a371f7;
+            --orange: #ffa657;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 12, 15, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.85rem 1.5rem;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 0.35rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem 2.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--accent), #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        .disclaimer {
+            background: rgba(255, 77, 106, 0.08);
+            border: 1px solid rgba(255, 77, 106, 0.25);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            color: #ffb3bf;
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text);
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.35rem;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            margin-top: -0.5rem;
+        }
+
+        /* Grid cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+        }
+
+        .card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .card h3 a:hover {
+            color: var(--accent);
+        }
+
+        .card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+            margin-bottom: 0.9rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: auto;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+        }
+
+        .tag.free { color: var(--accent); background: var(--accent-glow); }
+        .tag.paid { color: var(--orange); background: rgba(255, 166, 87, 0.12); }
+        .tag.beginner { color: var(--blue); background: rgba(88, 166, 255, 0.12); }
+        .tag.advanced { color: var(--purple); background: rgba(163, 113, 247, 0.12); }
+        .tag.web { color: #7ee787; background: rgba(126, 231, 135, 0.1); }
+
+        /* List style for some sections */
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .list-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.15rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            transition: border-color 0.2s;
+        }
+
+        .list-item:hover {
+            border-color: var(--accent);
+        }
+
+        .list-item .icon {
+            font-size: 1.3rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .list-item .content h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .list-item .content h4 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .list-item .content h4 a:hover {
+            color: var(--accent);
+        }
+
+        .list-item .content p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: #07090c;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .signature {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .signature span {
+            color: var(--text-muted);
+        }
+
+        .footer-note {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero {
+                padding-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                ⚡ Arsenal Cyber <span>// By Mix</span>
+            </a>
+            <nav>
+                <a href="#platforme">Platforme</a>
+                <a href="#tooluri">Tool-uri</a>
+                <a href="#docs">Documentații</a>
+                <a href="#carti">Cărți</a>
+                <a href="#certificari">Certificări</a>
+                <a href="#utile">Utile</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="badge">ETHICAL ONLY • LEGAL PRACTICE</div>
+        <h1>Toate resursele într-un loc</h1>
+        <p>Platforme CTF, tool-uri, documentații, cărți și resurse pentru hacking etic &amp; cybersecurity. Curat și organizat.</p>
+        <div class="disclaimer">
+            ⚠️ <strong>Disclaimer:</strong> Aceste resurse sunt destinate exclusiv învățării și testării pe sisteme pe care le deții sau pentru care ai autorizație scrisă. Utilizarea pe sisteme străine fără permisiune este ilegală.
+        </div>
+    </section>
+
+    <main>
+        <!-- PLATFORME CTF & LABS -->
+        <section id="platforme">
+            <h2 class="section-title">Platforme CTF &amp; Labs</h2>
+            <p class="section-desc">Medii legale unde poți practica fără riscuri. Începe de aici.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3><a href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe</a></h3>
+                    <p>Cel mai bun pentru începători. Path-uri ghidate, room-uri practice, de la zero la intermediar.</p>
+                    <div class="tags">
+                        <span class="tag free">Free + Paid</span>
+                        <span class="tag beginner">Beginner</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://www.hackthebox.com" target="_blank" rel="noopener">Hack The Box</a></h3>
+                    <p>Standardul industriei. Mașini realiste, Pro Labs, CTF-uri. Ideal pentru intermediar → avansat.</p>
+                    <div class="tags">
+                        <span class="tag free">Free + VIP</span>
+                        <span class="tag advanced">Intermediate+</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://portswigger.net/web-security" target="_blank" rel="noopener">PortSwigger Web Security Academy</a></h3>
+                    <p>Biblia gratuită pentru web hacking. Lab-uri interactive pe SQL Injection, XSS, SSRF, JWT etc.</p>
+                    <div class="tags">
+                        <span class="tag free">100% Free</span>
+                        <span class="tag web">Web</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://overthewire.org/wargames/" target="_blank" rel="noopener">OverTheWire</a></h3>
+                    <p>Wargames clasice. Bandit e perfect pentru Linux de bază. Natas pentru web.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag beginner">Beginner</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://picoctf.org" target="_blank" rel="noopener">picoCTF</a></h3>
+                    <p>Platformă educativă de la Carnegie Mellon. Foarte bună pentru studenți și începători.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag beginner">Beginner</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://www.root-me.org" target="_blank" rel="noopener">Root-Me</a></h3>
+                    <p>Sute de challenge-uri gratuite în multiple categorii: web, crypto, forensic, network, stegano.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag advanced">All levels</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://www.vulnhub.com" target="_blank" rel="noopener">VulnHub</a></h3>
+                    <p>Mașini virtuale vulnerabile pe care le descarci și le rulezi local (VirtualBox / VMware).</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag advanced">Intermediate</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://cryptohack.org" target="_blank" rel="noopener">CryptoHack</a></h3>
+                    <p>Învață criptografie modernă prin challenge-uri. AES, RSA, ECC – totul prin practică.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag advanced">Crypto</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://ctftime.org" target="_blank" rel="noopener">CTFtime</a></h3>
+                    <p>Calendarul global al competițiilor CTF. Găsești evenimente live aproape în fiecare weekend.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag advanced">Competitions</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://juice-shop.herokuapp.com" target="_blank" rel="noopener">OWASP Juice Shop</a></h3>
+                    <p>Aplicație web modernă intenționat vulnerabilă. Perfectă pentru a exersa OWASP Top 10.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag web">Web</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://owasp.org/www-project-webgoat/" target="_blank" rel="noopener">OWASP WebGoat</a></h3>
+                    <p>Aplicație clasică de training OWASP. Lecții pas cu pas pe vulnerabilități web.</p>
+                    <div class="tags">
+                        <span class="tag free">Free</span>
+                        <span class="tag web">Web</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://www.offsec.com/labs/" target="_blank" rel="noopener">OffSec Proving Grounds</a></h3>
+                    <p>Mașini în stil OSCP. Foarte bune pentru pregătire oficială Offensive Security.</p>
+                    <div class="tags">
+                        <span class="tag paid">Paid / Free tier</span>
+                        <span class="tag advanced">Advanced</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOL-URI -->
+        <section id="tooluri">
+            <h2 class="section-title">Tool-uri esențiale</h2>
+            <p class="section-desc">Instrumente standard folosite în pentesting legitim (doar pe ținte autorizate).</p>
+            <div class="list-grid">
+                <div class="list-item">
+                    <div class="icon">🔍</div>
+                    <div class="content">
+                        <h4><a href="https://nmap.org" target="_blank" rel="noopener">Nmap</a></h4>
+                        <p>Network scanner. Descoperire host-uri, porturi, servicii.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🦈</div>
+                    <div class="content">
+                        <h4><a href="https://www.wireshark.org" target="_blank" rel="noopener">Wireshark</a></h4>
+                        <p>Analiză de pachete. Esențial pentru networking &amp; forensics.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🕷️</div>
+                    <div class="content">
+                        <h4><a href="https://portswigger.net/burp" target="_blank" rel="noopener">Burp Suite</a></h4>
+                        <p>Proxy-ul standard pentru web app testing (Community + Pro).</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">⚡</div>
+                    <div class="content">
+                        <h4><a href="https://www.zaproxy.org" target="_blank" rel="noopener">OWASP ZAP</a></h4>
+                        <p>Alternativă open-source la Burp. Scanner web automat.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">💥</div>
+                    <div class="content">
+                        <h4><a href="https://www.metasploit.com" target="_blank" rel="noopener">Metasploit Framework</a></h4>
+                        <p>Framework de exploatare (doar pe lab-uri autorizate).</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🔑</div>
+                    <div class="content">
+                        <h4><a href="https://hashcat.net/hashcat/" target="_blank" rel="noopener">Hashcat</a></h4>
+                        <p>Password cracking pe GPU. Extrem de rapid.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🔓</div>
+                    <div class="content">
+                        <h4><a href="https://www.openwall.com/john/" target="_blank" rel="noopener">John the Ripper</a></h4>
+                        <p>Clasic pentru cracking de parole și hash-uri.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📡</div>
+                    <div class="content">
+                        <h4><a href="https://www.aircrack-ng.org" target="_blank" rel="noopener">Aircrack-ng</a></h4>
+                        <p>Suite pentru wireless security testing (autorizat).</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🧬</div>
+                    <div class="content">
+                        <h4><a href="https://ghidra-sre.org" target="_blank" rel="noopener">Ghidra</a></h4>
+                        <p>Reverse engineering framework de la NSA (gratuit).</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🧰</div>
+                    <div class="content">
+                        <h4><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">CyberChef</a></h4>
+                        <p>„Swiss Army Knife” pentru encoding, decoding, crypto în browser.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📁</div>
+                    <div class="content">
+                        <h4><a href="https://github.com/ffuf/ffuf" target="_blank" rel="noopener">ffuf</a></h4>
+                        <p>Fast web fuzzer. Directory &amp; parameter discovery.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">💉</div>
+                    <div class="content">
+                        <h4><a href="https://sqlmap.org" target="_blank" rel="noopener">SQLmap</a></h4>
+                        <p>Automated SQL injection detection &amp; exploitation (lab only).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENTAȚII -->
+        <section id="docs">
+            <h2 class="section-title">Documentații &amp; Knowledge Base</h2>
+            <p class="section-desc">Referințe pe care le vei deschide constant.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3><a href="https://owasp.org" target="_blank" rel="noopener">OWASP</a></h3>
+                    <p>Top 10, Testing Guide (WSTG), ASVS, Cheat Sheets. Standardul industriei pentru web security.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://book.hacktricks.xyz" target="_blank" rel="noopener">HackTricks</a></h3>
+                    <p>Enciclopedie de tehnici de pentesting: privilege escalation, AD, web, cloud, etc.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank" rel="noopener">PayloadsAllTheThings</a></h3>
+                    <p>Colecție masivă de payload-uri și bypass-uri pentru aproape orice vulnerabilitate.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://gtfobins.github.io" target="_blank" rel="noopener">GTFOBins</a></h3>
+                    <p>Unix binaries care pot fi folosite pentru privilege escalation / bypass.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://lolbas-project.github.io" target="_blank" rel="noopener">LOLBAS</a></h3>
+                    <p>Living Off The Land Binaries and Scripts (Windows).</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://attack.mitre.org" target="_blank" rel="noopener">MITRE ATT&amp;CK</a></h3>
+                    <p>Framework-ul global de tactici și tehnici ale atacatorilor. Esențial pentru red &amp; blue team.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://www.exploit-db.com" target="_blank" rel="noopener">Exploit-DB</a></h3>
+                    <p>Arhivă de exploit-uri publice + Google Hacking Database (GHDB).</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+                <div class="card">
+                    <h3><a href="https://cve.mitre.org" target="_blank" rel="noopener">CVE / NVD</a></h3>
+                    <p>Baza de date oficială de vulnerabilități. Verifică CVE-uri și scoruri CVSS.</p>
+                    <div class="tags"><span class="tag free">Free</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CĂRȚI -->
+        <section id="carti">
+            <h2 class="section-title">Cărți recomandate</h2>
+            <p class="section-desc">Cărțile care încă merită citite în 2026.</p>
+            <div class="list-grid">
+                <div class="list-item">
+                    <div class="icon">📘</div>
+                    <div class="content">
+                        <h4>Penetration Testing – Georgia Weidman</h4>
+                        <p>Cel mai bun start hands-on pentru începători.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📗</div>
+                    <div class="content">
+                        <h4>The Web Application Hacker’s Handbook</h4>
+                        <p>Dafydd Stuttard &amp; Marcus Pinto – Biblia web hacking.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📕</div>
+                    <div class="content">
+                        <h4>Hacking: The Art of Exploitation</h4>
+                        <p>Jon Erickson – înțelegi low-level cum funcționează exploit-urile.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📙</div>
+                    <div class="content">
+                        <h4>The Hacker Playbook 3</h4>
+                        <p>Peter Kim – metodologie și attack chains reale.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📓</div>
+                    <div class="content">
+                        <h4>Black Hat Python (2nd Ed)</h4>
+                        <p>Justin Seitz – scrii tool-uri ofensive în Python.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📔</div>
+                    <div class="content">
+                        <h4>Linux Basics for Hackers</h4>
+                        <p>OccupyTheWeb – Linux-ul de care ai nevoie înainte de pentest.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📒</div>
+                    <div class="content">
+                        <h4>Metasploit: The Penetration Tester’s Guide</h4>
+                        <p>Ghid practic pe framework-ul Metasploit.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📕</div>
+                    <div class="content">
+                        <h4>Gray Hat Hacking (6th Ed)</h4>
+                        <p>Referință largă – ethical hacking handbook.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICĂRI -->
+        <section id="certificari">
+            <h2 class="section-title">Certificări</h2>
+            <p class="section-desc">Cele mai recunoscute pe piață (în ordine aproximativă de progres).</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>CompTIA Security+</h3>
+                    <p>Entry-level. Baza teoretică de securitate. Foarte bună pentru HR filters.</p>
+                    <div class="tags"><span class="tag beginner">Beginner</span></div>
+                </div>
+                <div class="card">
+                    <h3>eJPT / PNPT</h3>
+                    <p>Practic, accesibil. eLearnSecurity / TCM. Excelentă treaptă intermediară.</p>
+                    <div class="tags"><span class="tag beginner">Beginner → Mid</span></div>
+                </div>
+                <div class="card">
+                    <h3>CEH (EC-Council)</h3>
+                    <p>Cunoscut pe piață, mai mult teoretic. Util pentru CV în unele companii.</p>
+                    <div class="tags"><span class="tag paid">Paid</span></div>
+                </div>
+                <div class="card">
+                    <h3>OSCP (OffSec)</h3>
+                    <p>Standardul de aur pentru pentesteri. Extrem de practic și respectat.</p>
+                    <div class="tags"><span class="tag advanced">Advanced</span></div>
+                </div>
+                <div class="card">
+                    <h3>OSWE / OSEP / OSED</h3>
+                    <p>Specializări OffSec (web, evasion, exploit development).</p>
+                    <div class="tags"><span class="tag advanced">Expert</span></div>
+                </div>
+                <div class="card">
+                    <h3>CRTO / CRTP</h3>
+                    <p>Active Directory &amp; Red Team (Altered Security). Foarte apreciate.</p>
+                    <div class="tags"><span class="tag advanced">AD / Red Team</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UTILE -->
+        <section id="utile">
+            <h2 class="section-title">Link-uri utile &amp; News</h2>
+            <div class="list-grid">
+                <div class="list-item">
+                    <div class="icon">📰</div>
+                    <div class="content">
+                        <h4><a href="https://thehackernews.com" target="_blank" rel="noopener">The Hacker News</a></h4>
+                        <p>Știri zilnice din cybersecurity.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📰</div>
+                    <div class="content">
+                        <h4><a href="https://krebsonsecurity.com" target="_blank" rel="noopener">Krebs on Security</a></h4>
+                        <p>Investigative journalism de top.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📰</div>
+                    <div class="content">
+                        <h4><a href="https://www.bleepingcomputer.com" target="_blank" rel="noopener">BleepingComputer</a></h4>
+                        <p>News + how-to-uri de securitate.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🐦</div>
+                    <div class="content">
+                        <h4><a href="https://x.com" target="_blank" rel="noopener">X / Twitter Security</a></h4>
+                        <p>Urmărește cercetători: @SwiftOnSecurity, @HackerFantastic, @vxunderground etc.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📦</div>
+                    <div class="content">
+                        <h4><a href="https://www.kali.org" target="_blank" rel="noopener">Kali Linux</a></h4>
+                        <p>Distribuția standard pentru pentesting.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🐧</div>
+                    <div class="content">
+                        <h4><a href="https://www.parrotsec.org" target="_blank" rel="noopener">Parrot OS</a></h4>
+                        <p>Alternativă ușoară la Kali, focus pe privacy + security.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">☁️</div>
+                    <div class="content">
+                        <h4><a href="https://github.com" target="_blank" rel="noopener">GitHub Security</a></h4>
+                        <p>Caută tool-uri, write-up-uri, PoC-uri (doar pentru învățare).</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🎯</div>
+                    <div class="content">
+                        <h4><a href="https://bugcrowd.com" target="_blank" rel="noopener">Bugcrowd / HackerOne</a></h4>
+                        <p>Platforme de bug bounty (doar pe programe autorizate).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="signature">By Mix</div>
+            <div class="signature"><span>Design By Mix</span></div>
+            <p class="footer-note">
+                Resurse pentru învățare legitimă și testare autorizată.<br>
+                © 2026 • Arsenal Cyber
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
